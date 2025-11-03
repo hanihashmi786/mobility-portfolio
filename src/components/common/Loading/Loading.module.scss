@@ -1,0 +1,9 @@
+.loading {
+  @include flex-center;
+  min-height: 100vh;
+  background: $color-bg-primary;
+  
+  .spinner {
+    color: $color-primary;
+  }
+}

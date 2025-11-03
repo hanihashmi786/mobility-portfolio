@@ -1,0 +1,15 @@
+.card {
+  @include card;
+  
+  &.default {
+    background: $color-bg-primary;
+  }
+  
+  &.light {
+    background: $color-bg-card;
+  }
+  
+  &.gradient {
+    background: linear-gradient(135deg, $color-secondary 0%, $color-bg-card 100%);
+  }
+}

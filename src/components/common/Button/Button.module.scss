@@ -1,0 +1,38 @@
+.button {
+  @include button-base;
+  
+  &.primary {
+    @include button-primary;
+  }
+  
+  &.secondary {
+    @include button-secondary;
+  }
+  
+  &.outline {
+    @include button-base;
+    background: transparent;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+    
+    &:hover:not(:disabled) {
+      background: $color-primary;
+      color: $color-text-white;
+    }
+  }
+  
+  &.sm {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+  }
+  
+  &.md {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-base;
+  }
+  
+  &.lg {
+    padding: $spacing-lg $spacing-2xl;
+    font-size: $font-size-lg;
+  }
+}

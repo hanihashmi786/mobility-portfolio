@@ -1,0 +1,42 @@
+.progressCircle {
+  position: relative;
+  display: inline-block;
+  
+  .svg {
+    transform: rotate(-90deg);
+  }
+  
+  .bgCircle {
+    fill: none;
+    stroke: $color-primary-light;
+    opacity: 0.2;
+  }
+  
+  .progressBar {
+    fill: none;
+    stroke: $color-primary;
+    stroke-linecap: round;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    .percentage {
+      display: block;
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+    }
+    
+    .label {
+      display: block;
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      margin-top: $spacing-xs;
+    }
+  }
+}

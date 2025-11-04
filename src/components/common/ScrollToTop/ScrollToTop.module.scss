@@ -1,0 +1,33 @@
+.scrollToTop {
+  position: fixed;
+  bottom: $spacing-xl;
+  #{right}: $spacing-xl;
+  z-index: $z-fixed;
+  width: 56px;
+  height: 56px;
+  @include flex-center;
+  background: $color-primary;
+  color: $color-text-white;
+  border: none;
+  border-radius: $radius-full;
+  box-shadow: $shadow-xl;
+  cursor: pointer;
+  transition: all $transition-base $ease-out;
+  
+  &:hover {
+    background: $color-primary-dark;
+    box-shadow: $shadow-2xl;
+  }
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+[dir='rtl'] {
+  .scrollToTop {
+    right: auto;
+    left: $spacing-xl;
+  }
+}

@@ -1,0 +1,90 @@
+.footer {
+  background: $color-bg-dark;
+  color: $color-text-white;
+  padding: $spacing-4xl 0 $spacing-xl;
+  
+  .container {
+    @include container;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3xl;
+    margin-bottom: $spacing-3xl;
+    
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .brand {
+    flex: 1;
+    
+    .brandName {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      background: linear-gradient(135deg, $color-primary-light 0%, $color-primary 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: $spacing-md;
+    }
+    
+    .tagline {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: $font-size-lg;
+      max-width: 300px;
+    }
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2xl;
+    
+    @include md {
+      flex-direction: row;
+      gap: $spacing-4xl;
+    }
+  }
+  
+  .linkGroup {
+    .linkTitle {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-lg;
+      color: $color-text-white;
+    }
+    
+    .linkList {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: $spacing-md;
+        
+        a {
+          color: rgba(255, 255, 255, 0.7);
+          transition: color $transition-base $ease-out;
+          
+          &:hover {
+            color: $color-primary-light;
+          }
+        }
+      }
+    }
+  }
+  
+  .bottom {
+    padding-top: $spacing-xl;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .copyright {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: $font-size-sm;
+    }
+  }
+}

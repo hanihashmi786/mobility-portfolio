@@ -1,0 +1,69 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-sm;
+  z-index: $z-sticky;
+  padding: $spacing-md 0;
+  
+  .container {
+    @include container;
+    @include flex-between;
+    gap: $spacing-xl;
+  }
+  
+  .logo {
+    .logoText {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      @include gradient-text;
+    }
+  }
+  
+  .nav {
+    display: none;
+    gap: $spacing-lg;
+    
+    @include lg {
+      display: flex;
+    }
+    
+    .navLink {
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      color: $color-text-secondary;
+      cursor: pointer;
+      transition: color $transition-base $ease-out;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $radius-md;
+      
+      &:hover,
+      &.active {
+        color: $color-primary;
+        background: $color-secondary;
+      }
+    }
+  }
+  
+  .langToggle {
+    @include flex-center;
+    width: 44px;
+    height: 44px;
+    border-radius: $radius-full;
+    background: $color-primary;
+    color: $color-text-white;
+    border: none;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+    cursor: pointer;
+    transition: all $transition-base $ease-out;
+    
+    &:hover {
+      background: $color-primary-dark;
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.section {
+  @include section-spacing;
+  
+  &.default {
+    background: $color-bg-primary;
+  }
+  
+  &.light {
+    background: $color-bg-secondary;
+  }
+  
+  &.dark {
+    background: $color-bg-dark;
+    color: $color-text-white;
+  }
+  
+  .container {
+    @include container;
+  }
+}

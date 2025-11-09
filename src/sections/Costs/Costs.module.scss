@@ -1,0 +1,126 @@
+.header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+  
+  .title {
+    @include heading-2;
+    color: $color-text-primary;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .subtitle {
+    @include body-large;
+    color: $color-text-secondary;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-4xl;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  
+  .cardTitle {
+    @include heading-3;
+    color: $color-primary;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+  }
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: $spacing-xl;
+  flex: 1;
+  
+  .item {
+    @include flex-between;
+    gap: $spacing-md;
+    padding: $spacing-md 0;
+    border-bottom: 1px solid $color-border;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .itemLabel {
+      font-size: $font-size-base;
+      color: $color-text-secondary;
+      flex: 1;
+    }
+    
+    .itemAmount {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      white-space: nowrap;
+    }
+  }
+}
+
+.total {
+  @include flex-between;
+  padding-top: $spacing-lg;
+  border-top: 2px solid $color-primary;
+  
+  .totalLabel {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+  
+  .totalAmount {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+}
+
+.summary {
+  display: grid;
+  gap: $spacing-2xl;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .summaryCard {
+    text-align: center;
+    
+    .summaryItem {
+      .summaryLabel {
+        @include heading-3;
+        color: $color-primary;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .summaryValue {
+        font-size: $font-size-5xl;
+        font-weight: $font-weight-extrabold;
+        color: $color-text-primary;
+        margin-bottom: $spacing-md;
+      }
+      
+      .summarySubtext {
+        font-size: $font-size-base;
+        color: $color-text-secondary;
+        line-height: $line-height-relaxed;
+      }
+    }
+  }
+}

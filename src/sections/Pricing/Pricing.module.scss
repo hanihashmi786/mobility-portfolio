@@ -1,0 +1,193 @@
+.header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+  
+  .title {
+    @include heading-2;
+    color: $color-text-primary;
+  }
+}
+
+.sectionTitle {
+  @include heading-3;
+  color: $color-text-primary;
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+// Revenue Forecast Section
+.revenueSection {
+  margin-bottom: $spacing-5xl;
+}
+
+.revenueGrid {
+  display: grid;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-3xl;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .revenueCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    text-align: center;
+    
+    .revenueLabel {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+    }
+    
+    .revenueAvg {
+      font-size: $font-size-base;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+.revenueInfo {
+  display: flex;
+  gap: $spacing-lg;
+  align-items: flex-start;
+  
+  .infoIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    @include flex-center;
+    background: $color-primary;
+    color: $color-text-white;
+    border-radius: $radius-lg;
+  }
+  
+  .infoContent {
+    flex: 1;
+    
+    .infoTitle {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .infoText {
+      font-size: $font-size-base;
+      line-height: $line-height-relaxed;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+// Service Packages Section
+.packagesSection {
+  .packagesGrid {
+    display: grid;
+    gap: $spacing-2xl;
+    
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.packageCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid transparent;
+  transition: all $transition-base $ease-out;
+  
+  &:hover {
+    border-color: $color-primary;
+  }
+  
+  .packageNumber {
+    position: absolute;
+    top: -15px;
+    #{left}: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    background: $color-primary;
+    color: $color-text-white;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    border-radius: $radius-full;
+    box-shadow: $shadow-lg;
+  }
+  
+  .packageTitle {
+    @include heading-3;
+    color: $color-text-primary;
+    text-align: center;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-md;
+  }
+  
+  .packagePrice {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    .priceAmount {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-extrabold;
+      color: $color-primary;
+    }
+    
+    .priceCurrency {
+      font-size: $font-size-lg;
+      color: $color-text-secondary;
+      margin-#{left}: $spacing-xs;
+    }
+  }
+  
+  .featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      padding: $spacing-md 0;
+      font-size: $font-size-base;
+      color: $color-text-secondary;
+      
+      .checkIcon {
+        flex-shrink: 0;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+// RTL adjustments
+[dir='rtl'] {
+  .revenueInfo {
+    .infoIcon {
+      margin-right: 0;
+      margin-left: $spacing-lg;
+    }
+  }
+  
+  .packageCard {
+    .packageNumber {
+      right: 50%;
+      left: auto;
+    }
+  }
+}

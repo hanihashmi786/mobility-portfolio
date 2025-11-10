@@ -1,0 +1,86 @@
+.header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+  
+  .title {
+    @include heading-2;
+    color: $color-text-primary;
+  }
+}
+
+.advantagesGrid {
+  display: grid;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-4xl;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .advantageCard {
+    text-align: center;
+    
+    .iconWrapper {
+      @include flex-center;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto $spacing-lg;
+      background: $color-primary;
+      color: $color-text-white;
+      border-radius: $radius-xl;
+      box-shadow: $shadow-lg;
+    }
+    
+    .advantageTitle {
+      @include heading-3;
+      color: $color-text-primary;
+      margin-bottom: $spacing-md;
+    }
+    
+    .advantageDescription {
+      font-size: $font-size-base;
+      line-height: $line-height-relaxed;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+.bottomGrid {
+  display: grid;
+  gap: $spacing-2xl;
+  
+  @include lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .featureCard {
+    .featureTitle {
+      @include heading-3;
+      color: $color-text-primary;
+      margin-bottom: $spacing-xl;
+      text-align: center;
+    }
+    
+    .featureList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      .featureItem {
+        display: flex;
+        gap: $spacing-md;
+        padding: $spacing-sm 0;
+        font-size: $font-size-base;
+        line-height: $line-height-relaxed;
+        color: $color-text-secondary;
+        
+        .bullet {
+          color: $color-primary;
+          font-weight: $font-weight-bold;
+          font-size: $font-size-lg;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}

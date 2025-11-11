@@ -1,0 +1,153 @@
+.header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+  
+  .title {
+    @include heading-2;
+    color: $color-text-primary;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .subtitle {
+    @include body-large;
+    color: $color-text-secondary;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.content {
+  display: grid;
+  gap: $spacing-3xl;
+  
+  @include lg {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.formCard,
+.infoCard,
+.ctaCard {
+  .cardTitle {
+    @include heading-3;
+    color: $color-primary;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    
+    .label {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+    }
+    
+    .input,
+    .textarea {
+      width: 100%;
+      padding: $spacing-md;
+      border: 2px solid $color-border;
+      border-radius: $radius-lg;
+      font-size: $font-size-base;
+      font-family: inherit;
+      transition: all $transition-base $ease-out;
+      
+      &:focus {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+      }
+      
+      &::placeholder {
+        color: $color-text-light;
+      }
+    }
+    
+    .textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+  
+  .submitButton {
+    width: 100%;
+    margin-top: $spacing-lg;
+  }
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  
+  .contactItem {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: flex-start;
+    
+    .iconWrapper {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      @include flex-center;
+      background: $color-primary;
+      color: $color-text-white;
+      border-radius: $radius-lg;
+    }
+    
+    .contactInfo {
+      flex: 1;
+      
+      .contactLabel {
+        font-size: $font-size-base;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+        margin-bottom: $spacing-xs;
+      }
+      
+      .contactValue {
+        font-size: $font-size-base;
+        color: $color-text-secondary;
+        text-decoration: none;
+        transition: color $transition-base $ease-out;
+        
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.ctaCard {
+  text-align: center;
+  
+  .ctaTitle {
+    @include heading-3;
+    color: $color-text-primary;
+    margin-bottom: $spacing-md;
+  }
+  
+  .ctaText {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-xl;
+  }
+}

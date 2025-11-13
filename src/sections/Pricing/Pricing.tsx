@@ -116,7 +116,11 @@ export const Pricing: React.FC = () => {
                   <span>شهرياً بمعدل 10 خدمات يومياً، مع هامش ربح صافي 35-40% بعد خصم التكاليف التشغيلية.</span>
                 </>
               ) : (
-                "45,000 - 55,000 SAR monthly with an average of 10 daily services, with a net profit margin of 35-40% after deducting operational costs."
+                <>
+                  <span>45,000 - 55,000</span>
+                  <RiyalIcon size={20} className="text-gray-700" />
+                  <span>monthly with an average of 10 daily services, with a net profit margin of 35-40% after deducting operational costs.</span>
+                </>
               )}
             </p>
           </div>
@@ -135,11 +139,7 @@ export const Pricing: React.FC = () => {
               <h4 className="text-2xl font-bold text-gray-900 mb-4">{pkg.title}</h4>
               <div className="mb-6 flex items-center gap-2">
                 <span className="text-4xl font-bold text-blue-600">{pkg.price}</span>
-                {language === "ar" ? (
-                  <RiyalIcon size={28} className="text-gray-600" />
-                ) : (
-                  <span className="text-lg text-gray-600">SAR</span>
-                )}
+                <RiyalIcon size={28} className="text-gray-600" />
               </div>
               <ul className="space-y-3">
                 {pkg.features.map((feature, featureIndex) => (

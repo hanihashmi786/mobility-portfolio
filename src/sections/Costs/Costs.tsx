@@ -62,7 +62,7 @@ export const Costs: React.FC = () => {
                 >
                   <span>{item.label}</span>
                   <span className="font-semibold flex items-center gap-1">
-                    {item.amount} {language === "ar" ? <RiyalIcon size={18} className="text-gray-700" /> : "SAR"}
+                    {item.amount} <RiyalIcon size={18} className="text-gray-700" />
                   </span>
                 </li>
               ))}
@@ -70,7 +70,7 @@ export const Costs: React.FC = () => {
             <div className="pt-4 border-t-2 border-blue-200 flex justify-between items-center">
               <span className="text-lg font-bold text-gray-900">{language === "ar" ? "المجموع" : "Total"}:</span>
               <span className="text-2xl font-bold text-blue-600 flex items-center gap-2">
-                {category.total} {language === "ar" ? <RiyalIcon size={24} className="text-blue-600" /> : "SAR"}
+                {category.total} <RiyalIcon size={24} className="text-blue-600" />
               </span>
             </div>
           </Card>
@@ -80,11 +80,13 @@ export const Costs: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card variant="gradient">
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{t.costs.totalInvestment}</h3>
-          <p className="text-5xl font-bold text-blue-600 mb-4">76K</p>
+          <p className="text-5xl font-bold text-blue-600 mb-4 flex items-center gap-2 justify-center">
+            76K <RiyalIcon size={32} className="text-blue-600" />
+          </p>
           <p className="text-gray-700">
             {language === "ar"
-              ? "ريال سعودي تقريباً لإطلاق المشروع بشكل كامل"
-              : "SAR approximately to launch the project fully"}
+              ? "تقريباً لإطلاق المشروع بشكل كامل"
+              : "approximately to launch the project fully"}
           </p>
         </Card>
 

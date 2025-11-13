@@ -42,7 +42,13 @@ export const Investment: React.FC = () => {
       في السنة الثانية، مع إمكانية مضاعفة العائد عند التوسع.
     </>
   ) : (
-    "Net profit margin of 35-40% monthly, expected annual revenues exceeding 600,000 SAR in the second year, with the possibility of doubling returns upon expansion."
+    <>
+      Net profit margin of 35-40% monthly, expected annual revenues exceeding{" "}
+      <span className="inline-flex items-center gap-1">
+        600,000 <RiyalIcon size={18} className="text-gray-700" />
+      </span>{" "}
+      in the second year, with the possibility of doubling returns upon expansion.
+    </>
   )
 
   const nextSteps =
@@ -59,7 +65,13 @@ export const Investment: React.FC = () => {
       للمساهمة في رأس المال والتوسع السريع، مقابل حصة في الأرباح تتراوح بين 25-40% حسب حجم الاستثمار.
     </>
   ) : (
-    "Investment partner or investor with an amount of 40,000 - 80,000 SAR to contribute to capital and rapid expansion, in exchange for a profit share ranging between 25-40% depending on investment size."
+    <>
+      Investment partner or investor with an amount of{" "}
+      <span className="inline-flex items-center gap-1">
+        40,000 - 80,000 <RiyalIcon size={18} className="text-gray-700" />
+      </span>{" "}
+      to contribute to capital and rapid expansion, in exchange for a profit share ranging between 25-40% depending on investment size.
+    </>
   )
 
   const scrollToContact = () => {

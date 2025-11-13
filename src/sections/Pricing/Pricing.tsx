@@ -6,6 +6,7 @@ import { translations } from "../../utils/translations"
 import { Card } from "../../components/common/Card/Card"
 import { ProgressCircle } from "../../components/common/ProgressCircle/ProgressCircle"
 import { Section } from "../../components/layout/Section/Section"
+import { RiyalIcon } from "../../components/common/RiyalIcon/RiyalIcon"
 
 export const Pricing: React.FC = () => {
   const { language } = useLanguage()
@@ -107,10 +108,16 @@ export const Pricing: React.FC = () => {
             <h4 className="text-lg font-bold text-gray-900 mb-2">
               {language === "ar" ? "الإيرادات المتوقعة:" : "Expected Revenue:"}
             </h4>
-            <p className="text-gray-700 leading-relaxed">
-              {language === "ar"
-                ? "45,000 - 55,000 رس شهرياً بمعدل 10 خدمات يومياً، مع هامش ربح صافي 35-40% بعد خصم التكاليف التشغيلية."
-                : "45,000 - 55,000 SAR monthly with an average of 10 daily services, with a net profit margin of 35-40% after deducting operational costs."}
+            <p className="text-gray-700 leading-relaxed flex items-center flex-wrap gap-1">
+              {language === "ar" ? (
+                <>
+                  <span>45,000 - 55,000</span>
+                  <RiyalIcon size={20} className="text-gray-700" />
+                  <span>شهرياً بمعدل 10 خدمات يومياً، مع هامش ربح صافي 35-40% بعد خصم التكاليف التشغيلية.</span>
+                </>
+              ) : (
+                "45,000 - 55,000 SAR monthly with an average of 10 daily services, with a net profit margin of 35-40% after deducting operational costs."
+              )}
             </p>
           </div>
         </Card>
@@ -126,9 +133,13 @@ export const Pricing: React.FC = () => {
                 {pkg.number}
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">{pkg.title}</h4>
-              <div className="mb-6">
+              <div className="mb-6 flex items-center gap-2">
                 <span className="text-4xl font-bold text-blue-600">{pkg.price}</span>
-                <span className="text-lg text-gray-600 ml-2">{language === "ar" ? "رس" : "SAR"}</span>
+                {language === "ar" ? (
+                  <RiyalIcon size={28} className="text-gray-600" />
+                ) : (
+                  <span className="text-lg text-gray-600">SAR</span>
+                )}
               </div>
               <ul className="space-y-3">
                 {pkg.features.map((feature, featureIndex) => (

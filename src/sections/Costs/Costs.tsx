@@ -5,6 +5,7 @@ import { useLanguage } from "../../context/LanguageContext"
 import { translations } from "../../utils/translations"
 import { Card } from "../../components/common/Card/Card"
 import { Section } from "../../components/layout/Section/Section"
+import { RiyalIcon } from "../../components/common/RiyalIcon/RiyalIcon"
 
 export const Costs: React.FC = () => {
   const { language } = useLanguage()
@@ -60,16 +61,16 @@ export const Costs: React.FC = () => {
                   style={{ animationDelay: `${itemIndex * 100}ms` }}
                 >
                   <span>{item.label}</span>
-                  <span className="font-semibold">
-                    {item.amount} {language === "ar" ? "رس" : "SAR"}
+                  <span className="font-semibold flex items-center gap-1">
+                    {item.amount} {language === "ar" ? <RiyalIcon size={18} className="text-gray-700" /> : "SAR"}
                   </span>
                 </li>
               ))}
             </ul>
             <div className="pt-4 border-t-2 border-blue-200 flex justify-between items-center">
               <span className="text-lg font-bold text-gray-900">{language === "ar" ? "المجموع" : "Total"}:</span>
-              <span className="text-2xl font-bold text-blue-600">
-                {category.total} {language === "ar" ? "رس" : "SAR"}
+              <span className="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                {category.total} {language === "ar" ? <RiyalIcon size={24} className="text-blue-600" /> : "SAR"}
               </span>
             </div>
           </Card>

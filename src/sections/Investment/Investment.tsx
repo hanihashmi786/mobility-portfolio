@@ -6,6 +6,7 @@ import { translations } from "../../utils/translations"
 import { Card } from "../../components/common/Card/Card"
 import { Button } from "../../components/common/Button/Button"
 import { Section } from "../../components/layout/Section/Section"
+import { RiyalIcon } from "../../components/common/RiyalIcon/RiyalIcon"
 
 export const Investment: React.FC = () => {
   const { language } = useLanguage()
@@ -32,23 +33,34 @@ export const Investment: React.FC = () => {
     },
   ]
 
-  const expectedReturns = [
-    language === "ar"
-      ? "هامش ربح صافي 35-40% شهرياً، إيرادات سنوية متوقعة تتجاوز 600,000 ر.س في السنة الثانية، مع إمكانية مضاعفة العائد عند التوسع."
-      : "Net profit margin of 35-40% monthly, expected annual revenues exceeding 600,000 SAR in the second year, with the possibility of doubling returns upon expansion.",
-  ]
+  const expectedReturns = language === "ar" ? (
+    <>
+      هامش ربح صافي 35-40% شهرياً، إيرادات سنوية متوقعة تتجاوز{" "}
+      <span className="inline-flex items-center gap-1">
+        600,000 <RiyalIcon size={18} className="text-gray-700" />
+      </span>{" "}
+      في السنة الثانية، مع إمكانية مضاعفة العائد عند التوسع.
+    </>
+  ) : (
+    "Net profit margin of 35-40% monthly, expected annual revenues exceeding 600,000 SAR in the second year, with the possibility of doubling returns upon expansion."
+  )
 
-  const nextSteps = [
+  const nextSteps =
     language === "ar"
       ? "نرحب بلقاء تفصيلي لمناقشة خطة العمل الكاملة، الدراسة المالية، وعرض الشراكة. تواصلوا معنا لترتيب موعد وبدء رحلة النجاح معاً."
-      : "We welcome a detailed meeting to discuss the complete business plan, financial study, and partnership proposal. Contact us to arrange an appointment and start the journey to success together.",
-  ]
+      : "We welcome a detailed meeting to discuss the complete business plan, financial study, and partnership proposal. Contact us to arrange an appointment and start the journey to success together."
 
-  const whatWeLookFor = [
-    language === "ar"
-      ? "شريك استثماري أو مستثمر بمبلغ 40,000 - 80,000 رس للمساهمة في رأس المال والتوسع السريع، مقابل حصة في الأرباح تتراوح بين 25-40% حسب حجم الاستثمار."
-      : "Investment partner or investor with an amount of 40,000 - 80,000 SAR to contribute to capital and rapid expansion, in exchange for a profit share ranging between 25-40% depending on investment size.",
-  ]
+  const whatWeLookFor = language === "ar" ? (
+    <>
+      شريك استثماري أو مستثمر بمبلغ{" "}
+      <span className="inline-flex items-center gap-1">
+        40,000 - 80,000 <RiyalIcon size={18} className="text-gray-700" />
+      </span>{" "}
+      للمساهمة في رأس المال والتوسع السريع، مقابل حصة في الأرباح تتراوح بين 25-40% حسب حجم الاستثمار.
+    </>
+  ) : (
+    "Investment partner or investor with an amount of 40,000 - 80,000 SAR to contribute to capital and rapid expansion, in exchange for a profit share ranging between 25-40% depending on investment size."
+  )
 
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
@@ -78,45 +90,27 @@ export const Investment: React.FC = () => {
         <Card variant="gradient">
           <h3 className="text-xl font-bold text-gray-900 mb-4">{t.investment.whatWeLookFor}</h3>
           <div className="space-y-3">
-            {whatWeLookFor.map((item, index) => (
-              <p
-                key={index}
-                className="text-gray-700 leading-relaxed animate-in fade-in duration-500"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {item}
-              </p>
-            ))}
+            <p className="text-gray-700 leading-relaxed animate-in fade-in duration-500">
+              {whatWeLookFor}
+            </p>
           </div>
         </Card>
 
         <Card variant="gradient">
           <h3 className="text-xl font-bold text-gray-900 mb-4">{t.investment.expectedReturns}</h3>
           <div className="space-y-3">
-            {expectedReturns.map((item, index) => (
-              <p
-                key={index}
-                className="text-gray-700 leading-relaxed animate-in fade-in duration-500"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {item}
-              </p>
-            ))}
+            <p className="text-gray-700 leading-relaxed animate-in fade-in duration-500">
+              {expectedReturns}
+            </p>
           </div>
         </Card>
 
         <Card variant="gradient">
           <h3 className="text-xl font-bold text-gray-900 mb-4">{t.investment.nextSteps}</h3>
           <div className="space-y-3">
-            {nextSteps.map((item, index) => (
-              <p
-                key={index}
-                className="text-gray-700 leading-relaxed animate-in fade-in duration-500"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {item}
-              </p>
-            ))}
+            <p className="text-gray-700 leading-relaxed animate-in fade-in duration-500">
+              {nextSteps}
+            </p>
           </div>
         </Card>
       </div>

@@ -30,8 +30,8 @@ export const Hero: React.FC = () => {
 
           <div className="relative animate-in fade-in slide-in-from-right-8 duration-700 delay-200">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-gGIPk7AWraqlLeIphKNFRoex5CtvXn.jpg"
-              alt="Mobile Oil Change Van"
+              src="/images/mechanic-oil-change.png"
+              alt={language === "ar" ? "فني يقوم بتغيير الزيت" : "Mechanic performing oil change"}
               className="rounded-2xl shadow-2xl w-full"
             />
           </div>

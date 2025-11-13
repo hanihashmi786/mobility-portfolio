@@ -162,10 +162,10 @@ export const Marketing: React.FC = () => {
         </Card>
 
         <Card>
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/6-icYjQoP4JLiMeJP07HrNMOGV7yz3bX.jpg"
-            alt="Marketing Strategy"
-            className="w-full h-full object-cover rounded-lg"
+        <img
+            src="/images/investment-meeting.png"
+            alt={language === "ar" ? "اجتماع استثماري" : "Investment meeting"}
+            className="w-full h-auto object-cover"
           />
         </Card>
       </div>

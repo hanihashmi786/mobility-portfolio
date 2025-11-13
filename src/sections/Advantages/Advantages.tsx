@@ -90,15 +90,6 @@ export const Advantages: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.advantages.title}</h2>
       </div>
 
-      <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl">
-          <img
-            src="/images/investment-meeting.png"
-            alt={language === "ar" ? "اجتماع استثماري" : "Investment meeting"}
-            className="w-full h-auto object-cover"
-          />
-        </div>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {advantages.map((advantage, index) => (

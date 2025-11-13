@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     title: "mobiliti - خدمة تغيير الزيوت المتنقلة",
     description: "حل مبتكر يوفر الوقت والراحة للعملاء",
   },
-    generator: 'v0.app'
 }
 
 export default function RootLayout({

@@ -4,6 +4,30 @@ import type React from "react"
 import { useLanguage } from "../../../context/LanguageContext"
 import { translations } from "../../../utils/translations"
 
+const USFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="28" height="20" rx="2" fill="white" />
+    <rect width="28" height="1.54" fill="#B22234" />
+    <rect y="3.08" width="28" height="1.54" fill="#B22234" />
+    <rect y="6.15" width="28" height="1.54" fill="#B22234" />
+    <rect y="9.23" width="28" height="1.54" fill="#B22234" />
+    <rect y="12.31" width="28" height="1.54" fill="#B22234" />
+    <rect y="15.38" width="28" height="1.54" fill="#B22234" />
+    <rect y="18.46" width="28" height="1.54" fill="#B22234" />
+    <rect width="11.2" height="10.77" fill="#3C3B6E" />
+  </svg>
+)
+
+const SaudiFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="28" height="20" rx="2" fill="#165B33" />
+    <path d="M8 10h12M14 7v6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    <text x="14" y="13" fontSize="6" fill="white" textAnchor="middle" fontFamily="Arial">
+      لا إله إلا الله
+    </text>
+  </svg>
+)
+
 export const Header: React.FC = () => {
   const { language, toggleLanguage } = useLanguage()
   const t = translations[language]
@@ -59,14 +83,14 @@ export const Header: React.FC = () => {
           <span className="flex items-center gap-2">
             {language === "ar" ? (
               <>
-                <span className="text-lg">🇺🇸</span>
-                <span className="text-xs">|</span>
+                <USFlag />
+                <span className="text-xs opacity-70">|</span>
                 <span>EN</span>
               </>
             ) : (
               <>
-                <span className="text-lg">🇸🇦</span>
-                <span className="text-xs">|</span>
+                <SaudiFlag />
+                <span className="text-xs opacity-70">|</span>
                 <span>AR</span>
               </>
             )}

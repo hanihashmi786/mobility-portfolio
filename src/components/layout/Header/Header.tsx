@@ -56,7 +56,21 @@ export const Header: React.FC = () => {
           className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors duration-300 text-sm lg:text-base whitespace-nowrap flex-shrink-0"
           aria-label="Toggle language"
         >
-          <span>{language === "ar" ? "EN" : "ع"}</span>
+          <span className="flex items-center gap-2">
+            {language === "ar" ? (
+              <>
+                <span className="text-lg">🇺🇸</span>
+                <span className="text-xs">|</span>
+                <span>EN</span>
+              </>
+            ) : (
+              <>
+                <span className="text-lg">🇸🇦</span>
+                <span className="text-xs">|</span>
+                <span>AR</span>
+              </>
+            )}
+          </span>
         </button>
       </div>
     </header>

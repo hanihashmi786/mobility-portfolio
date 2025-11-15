@@ -20,7 +20,7 @@ export const About: React.FC = () => {
         <Card variant="light">
           <div className="rounded-lg overflow-hidden">
             <img
-              src="/images/car-on-lift.png"
+              src="/images/project-idea.jpg"
               alt={language === "ar" ? "سيارة على رافعة في ورشة الصيانة" : "Car on hydraulic lift in repair shop"}
               className="w-full h-full object-cover"
             />

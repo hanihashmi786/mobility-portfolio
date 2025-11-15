@@ -163,7 +163,7 @@ export const Marketing: React.FC = () => {
 
         <Card>
         <img
-            src="/images/investment-meeting.png"
+            src="/images/marketing.jpg"
             alt={language === "ar" ? "اجتماع استثماري" : "Investment meeting"}
             className="w-full h-auto object-cover"
           />
